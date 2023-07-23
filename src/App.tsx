@@ -26,6 +26,12 @@ function App() {
       credentials: "include",
     });
   };
+  const handleClickStrict = () => {
+    fetch(`${apiUrl}/api/samesitestrict`, {
+      method: "post",
+      credentials: "include",
+    });
+  };
   const handleLogout = () => {
     fetch(`${apiUrl}/api/logout`, {
       method: "post",
@@ -50,6 +56,9 @@ function App() {
         </button>
         <button onClick={handleClickNone}>same site none 에서 쿠키 발급</button>
         <button onClick={handleClickLax}>same site lax 에서 쿠키 발급</button>
+        <button onClick={handleClickStrict}>
+          same site strict 에서 쿠키 발급
+        </button>
         <button onClick={handleLogout}>로그아웃</button>
         <button onClick={handleRequestLogin}>로그인 GET 요청</button>
       </div>
